@@ -1,0 +1,27 @@
+# Вариант 1: Раздача React-сайта напрямую на домене arkadia-tour.ru (с нового IP)
+server {
+    listen 80;
+    server_name arkadia-tour.ru www.arkadia-tour.ru;
+
+    root /var/www/arkadia-tour/dist;
+    index index.html;
+
+    # Поддержка всех внутренних ссылок (/vizy/*, /country/*, /contacts/* и т.д.)
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Кэширование статики (картинки, иконки, стили, скрипты)
+    location ~* \.(?:css|js|jpg|jpeg|gif|png|ico|svg|woff2?)$ {
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+    }
+}
+
+# Вариант 2: Если со стороннего IP нужно сделать временный 302-редирект на другой адрес
+# server {
+#     listen 80;
+#     server_name arkadia-tour.ru www.arkadia-tour.ru;
+#     return 302 https://ваш-временный-адрес.ru$request_uri;
+# }
+
