@@ -14,10 +14,6 @@ export function MaintenancePageModal({ selectedLink, onClose, onOpenCallback }) 
   const { path, label } = selectedLink;
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const fullOriginalUrl = `https://arkadia-tour.ru${cleanPath}`;
-  const waybackUrl = `${SITE_INFO.waybackBaseUrl}${cleanPath}`;
-  const webArhiveRuUrl = `https://web-arhive.ru/page?url=${encodeURIComponent(
-    fullOriginalUrl
-  )}&date=20260509&hidden=0`;
 
   const isVisa = cleanPath.startsWith('/vizy');
   const isCountry = cleanPath.startsWith('/country');
@@ -53,9 +49,9 @@ export function MaintenancePageModal({ selectedLink, onClose, onOpenCallback }) 
         </div>
 
         <p className="maintenance-modal__desc">
-          На основном сайте <strong>arkadia-tour.ru</strong> сейчас проводятся технические работы.
-          Ниже представлена справочная информация по выбранному разделу, контакты наших
-          специалистов и прямые ссылки на архивную копию страницы.
+          На сайте <strong>arkadia-tour.ru</strong> сейчас проводятся технические работы и временно
+          доступен только ограниченный функционал. Ниже представлена справочная информация по
+          выбранному разделу и прямые контакты наших специалистов.
         </p>
 
         {isTeam || isContacts ? (
@@ -180,16 +176,6 @@ export function MaintenancePageModal({ selectedLink, onClose, onOpenCallback }) 
           >
             Заказать звонок
           </button>
-        </div>
-
-        <div className="maintenance-modal__archive-links">
-          <span>Архивные копии этой страницы:</span>
-          <a href={waybackUrl} target="_blank" rel="noopener noreferrer">
-            Открыть в Web Archive ({cleanPath})
-          </a>
-          <a href={webArhiveRuUrl} target="_blank" rel="noopener noreferrer">
-            Открыть на web-arhive.ru
-          </a>
         </div>
       </div>
     </div>

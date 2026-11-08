@@ -56,16 +56,6 @@ export default function Footer({ onSelectInternalLink, onOpenCallback }) {
                 Согласие на обработку персональных данных
               </a>
             </div>
-            <div className="b-agreement-link" style={{ marginTop: '8px' }}>
-              <a
-                href={SITE_INFO.webArchiveSourceUrl}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="madein__link"
-              >
-                Сохранённая копия сайта (Web-Arhive.ru от {SITE_INFO.snapshotDate})
-              </a>
-            </div>
           </div>
 
           <div className="col-12 col-sm-6 col-md-4 footer__col footer__col_2">

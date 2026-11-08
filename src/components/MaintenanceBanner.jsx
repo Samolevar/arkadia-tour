@@ -18,13 +18,12 @@ export default function MaintenanceBanner({ onOpenCallback, onSelectInternalLink
 
         <div className="maintenance-banner__content">
           <strong className="maintenance-banner__title">
-            Основной сайт arkadia-tour.ru находится на плановом техническом обслуживании
+            На сайте проводятся плановые технические работы
           </strong>
           <p className="maintenance-banner__text">
-            Вы просматриваете информационную копию главной страницы (сохранённая копия от{' '}
-            {SITE_INFO.snapshotDate}). Турагентство <strong>«Аркадия Тур»</strong> работает в
-            штатном режиме — все контакты, направления, визовая поддержка и спецпредложения
-            актуальны!
+            В связи с проведением технических работ временно доступен только ограниченный
+            функционал. Турагентство <strong>«Аркадия Тур»</strong> работает в штатном режиме — все
+            контакты, направления, визовая поддержка и спецпредложения актуальны!
           </p>
         </div>
 
